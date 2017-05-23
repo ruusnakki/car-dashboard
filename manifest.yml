@@ -14,3 +14,9 @@ applications:
   command: npm start
   path: .
   memory: 512M
+  env:
+    WORKSPACE_ID: <conversation workspace id>
+  services:
+  - my-conversation-service
+    speech-to-text-service
+    text-to-speech-service

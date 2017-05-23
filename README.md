@@ -9,7 +9,8 @@ For more information about Conversation, see the [detailed documentation](http:/
 
 [See the demo](http://conversation-demo.mybluemix.net/).
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="readme_images/bluemix.png" width="200"/>](#bluemix)     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="readme_images/local.png" width="200"/>](#local)
+* [<img src="readme_images/bluemix.png" width="200"/>](#bluemix)
+* [<img src="readme_images/local.png" width="200"/>](#local)
 
 ## How the app works
 The app interface is designed and trained for chatting with a cognitive car. The interface allows the user to enter input either
@@ -36,17 +37,17 @@ understands that in both cases your intent is the same and responds accordingly.
    * You can view this on your Bluemix Dashboard. Tiles will show what space you have available.
    * For example, for Services & APIS
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/services.PNG)
+    ![](readme_images/services.PNG)
 
 ## Deploy the App
 1 Click this button to Deploy to Bluemix.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/car-dashboard)
+ [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/car-dashboard)
 
 2 Log in with an existing Bluemix account or sign up.
 
 3 Name your app and select your REGION, ORGANIZATION, and SPACE. Then select DEPLOY
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![](readme_images/deploy.PNG)
+ ![](readme_images/deploy.PNG)
 
 * This performs multiple actions:
   - Creates the app
@@ -55,11 +56,11 @@ understands that in both cases your intent is the same and responds accordingly.
 
 * The status of the deployment is shown. This can take some time.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/createproject.PNG)
+![](readme_images/createproject.PNG)
 
 5 Once your app has deployed, select VIEW YOUR APP. If you are using speech to text, change the protocol to https. Otherwise, your browser might confuse the microphone with an attack.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/viewyourapp.PNG)
+![](readme_images/viewyourapp.PNG)
 
 6 Navigate to your Bluemix Dashboard and [import a workspace](#workspace).
 
@@ -162,7 +163,7 @@ _Note: If you are interested in deploying you local application or the changes y
 
 1 You need to import the app's workspace. To do that, go to the Bluemix Dashboard and select the Conversation service instance. Once there, select the **Service Credentials** menu item.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/credentials.PNG)
+![](readme_images/credentials.PNG)
 
 2 Select **ADD CREDENTIALS**. Name your credentials then select **ADD**.
 
@@ -174,13 +175,13 @@ _Note: If you are interested in deploying you local application or the changes y
 
 6 Refresh your browser. A new workspace tile is created within the tooling. Select the _menu_ button within the workspace tile, then select **View details**:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Workpsace Details](readme_images/details.PNG)
+![Workpsace Details](readme_images/details.PNG)
 
 <a name="workspaceID">
 In the Details UI, copy the 36 character UNID **ID** field. This is the **Workspace ID**.
 </a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![](readme_images/workspaceid.PNG)
+ ![](readme_images/workspaceid.PNG)
 
 
 7 Return to your application, either in your local dev environment, or in Bluemix. If running on Bluemix, you need to [add environment variables](#env).
@@ -197,7 +198,7 @@ For more information on workspaces, see the full  [Conversation service  documen
 
 4 Add a variable with the name **WORKSPACE_ID**. For the value, paste in the Workspace ID you [copied earlier](#workspaceID). Select **SAVE**.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/env.PNG)
+![](readme_images/env.PNG)
 
 5 Restart your application.
 
@@ -209,26 +210,26 @@ For more information on workspaces, see the full  [Conversation service  documen
 - Navigate to the the application you previously created.
 - Select **Logs**.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/logs.PNG)
+![](readme_images/logs.PNG)
 
 - If you want, filter the LOG TYPE by "APP".
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/filter.PNG)
+![](readme_images/filter.PNG)
 
 #### In the new Bluemix:
 - Log in to Bluemix, you'll be taken to the dashboard.
 - Select **Compute**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/compute.PNG)
+![](readme_images/compute.PNG)
 
 - Select the application you previously created.
 - Select **Logs**.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/logs1.PNG)
+![](readme_images/logs1.PNG)
 
 - If you want, filter the Log Type by selecting the drop-down and selecting **Application(APP)**.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](readme_images/filter1.PNG)
+![](readme_images/filter1.PNG)
 
 ### With CLI
 
