@@ -32,3 +32,4 @@ bx login --sso -o iwinoto@au1.ibm.com -s bluemix-demo
 ```
 
 ## Preparation
+Clone the repository.
