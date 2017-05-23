@@ -8,8 +8,9 @@ cf create-service speech_to_text standard speech-to-text-service
 cf create-service text_to_speech standard text-to-speech-service
 
 # Push app
+HOST=$1
 if ! cf app $CF_APP; then
-  cf push $CF_APP
+  cf push $CF_APP -n $HOST
 else
   OLD_CF_APP=${CF_APP}-OLD-$(date +"%s")
   rollback() {
@@ -24,7 +25,7 @@ else
   set -e
   trap rollback ERR
   cf rename $CF_APP $OLD_CF_APP
-  cf push $CF_APP
+  cf push $CF_APP -n $HOST
   cf delete $OLD_CF_APP -f
 fi
 # Export app name and URL for use in later Pipeline jobs
