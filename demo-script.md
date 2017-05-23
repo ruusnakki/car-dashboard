@@ -33,3 +33,24 @@ bx login --sso -o iwinoto@au1.ibm.com -s bluemix-demo
 
 ## Preparation
 Clone the repository.
+Create a CD pipeline with the existing repository `https://github.com/iwinoto/car-dashboard.git`.
+In the deploy stage, set the deploy script to
+```sh
+#!/bin/bash
+./cf-deploy.sh iw-$CF_APP-$CF_SPACE
+```
+
+## Script
+Bluemix quick view of CF runtimes
+Bluemix catalogue
+Watson services
+Going to create an application using the Watson Conversation service. It will be used to create a virtual assistant for a smart car dashboard.
+Create an instance of the Watson Conversation service and call it `my-conversation-service`
+Open the conversation service dialogue
+We already have a conversation model built that has been exported to a JSON file.
+We'll import the JSON to create a new workspace.
+A conversation service instance can have multiple conversation models with sets of intents, entities and dialogues. Each of these represents a conversation workspace.
+An application connects to a particular conversation workspace.
+Our application has conversations to control a car. We'll get the WORKSPACE_ID to add to our application.
+We use the DevOps Toolchain to deploy the application.
+Following good 12-Factor app principles, we set the WORKSPACE_ID in the manifest file and commit the change to our source code repository.

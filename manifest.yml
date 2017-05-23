@@ -15,7 +15,7 @@ applications:
   path: .
   memory: 512M
   env:
-    WORKSPACE_ID: <conversation workspace id>
+    WORKSPACE_ID: 191b3467-01ea-4f5e-98ed-1bfec6c8e7fb
   services:
   - my-conversation-service
   - speech-to-text-service
