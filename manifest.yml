@@ -18,5 +18,5 @@ applications:
     WORKSPACE_ID: <conversation workspace id>
   services:
   - my-conversation-service
-    speech-to-text-service
-    text-to-speech-service
+  - speech-to-text-service
+  - text-to-speech-service
