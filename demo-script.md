@@ -54,3 +54,13 @@ An application connects to a particular conversation workspace.
 Our application has conversations to control a car. We'll get the WORKSPACE_ID to add to our application.
 We use the DevOps Toolchain to deploy the application.
 Following good 12-Factor app principles, we set the WORKSPACE_ID in the manifest file and commit the change to our source code repository.
+Run the app and have a conversation
+Ask for petrol stations
+Ask for gas stations
+note that Petrol is not understood. The conversation needs to be localised for AUS.
+Open the Conversation dashboard
+In the metrics view we can see the conversations that have been had.
+You can use this view to modify the model.
+Find the Petrol conversation and add 'Petrol station' as an example (synonym) for `@amenity:gas` entity.
+The model will be modified, which may take some time.
+We can test the new in the same view.
