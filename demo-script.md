@@ -31,16 +31,16 @@ bx api https://api.au-syd.bluemix.net
 bx login --sso -o iwinoto@au1.ibm.com -s bluemix-demo
 ```
 1. Open browser tabs
-  * Bluemix US-South for DevOps
-  * Bluemix AU-Syd (or which ever is used to host the application)
-  * Github to the application repository `https://github.com/iwinoto/car-dashboard.git`
+    * Bluemix US-South for DevOps
+    * Bluemix AU-Syd (or which ever is used to host the application)
+    * Github to the application repository `https://github.com/iwinoto/car-dashboard.git`
 1. Using **Simple Cloud Foundry toolchain** (**Note:** *NOT* v2 of the template) create a Toolchain using CD pipeline with a clone of the repository `https://github.com/iwinoto/car-dashboard.git` or clone of the repository.
 1. The application deployment will start immediately and fail because the deploy script needs to be set. In the deploy stage, set the deploy script to
 ```sh
 #!/bin/bash
 ./cf-deploy.sh $CF_APP-$CF_SPACE
 ```
-  * **Note:** The value being passed is `$CF_APP-$CF_SPACE` will be the host, or subdomain name of the application. Change this to ensure a unique application URL.
+    * **Note:** The value being passed is `$CF_APP-$CF_SPACE` will be the host, or subdomain name of the application. Change this to ensure a unique application URL.
 
 ## The demo (script)
 1. Bluemix quick view of CF runtimes
@@ -60,7 +60,7 @@ bx login --sso -o iwinoto@au1.ibm.com -s bluemix-demo
 1. Run the app and have a conversation
 1. Ask for petrol stations
 1. Ask for gas stations
-  * **Note:** that Petrol is not understood. The conversation needs to be localised for AUS.
+    * **Note:** that Petrol is not understood. The conversation needs to be localised for AUS.
 1. Open the Conversation dashboard
 1. In the metrics view we can see the conversations that have been had.
 1. You can use this view to modify the model.
