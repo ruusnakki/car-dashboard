@@ -1,4 +1,4 @@
-e# A 30 minute demonstration script
+# A 30 minute demonstration script
 
 ## Objectives
 In 30 minutes, convey how IBM Bluemix allows the ease of creating engaging end user applications using natural language cognitive technologies.
@@ -41,26 +41,26 @@ In the deploy stage, set the deploy script to
 ```
 
 ## Script
-  # Bluemix quick view of CF runtimes
-  # Bluemix catalogue
-  # Watson services
-  # Going to create an application using the Watson Conversation service. It will be used to create a virtual assistant for a smart car dashboard.
-  # Create an instance of the Watson Conversation service and call it `my-conversation-service`
-  # Open the conversation service dialogue
-  # We already have a conversation model built that has been exported to a JSON file.
-  # We'll import the JSON to create a new workspace.
-  # A conversation service instance can have multiple conversation models with sets of intents, entities and dialogues. Each of these represents a conversation workspace.
-  # An application connects to a particular conversation workspace.
-  # Our application has conversations to control a car. We'll get the WORKSPACE_ID to add to our application.
-  # We use the DevOps Toolchain to deploy the application.
-  # Following good 12-Factor app principles, we set the WORKSPACE_ID in the manifest file and commit the change to our source code repository.
-  # Run the app and have a conversation
-  # Ask for petrol stations
-  # Ask for gas stations
-    * *note* that Petrol is not understood. The conversation needs to be localised for AUS.
-  # Open the Conversation dashboard
-  # In the metrics view we can see the conversations that have been had.
-  # You can use this view to modify the model.
-  # Find the Petrol conversation and add 'Petrol station' as an example (synonym) for `@amenity:gas` entity.
-  # The model will be modified, which may take some time.
-  # We can test the new in the same view.
+  1. Bluemix quick view of CF runtimes
+  1. Bluemix catalogue
+  1. Watson services
+  1. Going to create an application using the Watson Conversation service. It will be used to create a virtual assistant for a smart car dashboard.
+  1. Create an instance of the Watson Conversation service and call it `my-conversation-service`
+  1. Open the conversation service dialogue
+  1. We already have a conversation model built that has been exported to a JSON file.
+  1. We'll import the JSON to create a new workspace.
+  1. A conversation service instance can have multiple conversation models with sets of intents, entities and dialogues. Each of these represents a conversation workspace.
+  1. An application connects to a particular conversation workspace.
+  1. Our application has conversations to control a car. We'll get the WORKSPACE_ID to add to our application.
+  1. We use the DevOps Toolchain to deploy the application.
+  1. Following good 12-Factor app principles, we set the WORKSPACE_ID in the manifest file and commit the change to our source code repository.
+  1. Run the app and have a conversation
+  1. Ask for petrol stations
+  1. Ask for gas stations
+    * **Note** that Petrol is not understood. The conversation needs to be localised for AUS.
+  1. Open the Conversation dashboard
+  1. In the metrics view we can see the conversations that have been had.
+  1. You can use this view to modify the model.
+  1. Find the Petrol conversation and add 'Petrol station' as an example (synonym) for `@amenity:gas` entity.
+  1. The model will be modified, which may take some time.
+  1. We can test the new in the same view.
