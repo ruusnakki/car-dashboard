@@ -23,23 +23,23 @@ The script was created for the IBM Deal Maker team to be used at an event in Syd
 
 ## Preparation
 1. set cf target to demo target region. For Sydney:
-```sh
-bx api https://api.au-syd.bluemix.net
-```
+    ```sh
+    bx api https://api.au-syd.bluemix.net
+    ```
 1. Login using `--sso` option for federated id. This will require navigating to a web page to get a one time passcode. During the interactive login, select the organisation and space. Alternatively, login in non-interactively using the -o and -s parameters to specify the organisation and space.
-```sh
-bx login --sso -o iwinoto@au1.ibm.com -s bluemix-demo
-```
+    ```sh
+    bx login --sso -o iwinoto@au1.ibm.com -s bluemix-demo
+    ```
 1. Open browser tabs
     * Bluemix US-South for DevOps
     * Bluemix AU-Syd (or which ever is used to host the application)
     * Github to the application repository `https://github.com/iwinoto/car-dashboard.git`
 1. Using **Simple Cloud Foundry toolchain** (**Note:** *NOT* v2 of the template) create a Toolchain using CD pipeline with a clone of the repository `https://github.com/iwinoto/car-dashboard.git` or clone of the repository.
 1. The application deployment will start immediately and fail because the deploy script needs to be set. In the deploy stage, set the deploy script to
-```sh
-#!/bin/bash
-./cf-deploy.sh $CF_APP-$CF_SPACE
-```
+    ```sh
+    #!/bin/bash
+    ./cf-deploy.sh $CF_APP-$CF_SPACE
+    ```
     * **Note:** The value being passed is `$CF_APP-$CF_SPACE` will be the host, or subdomain name of the application. Change this to ensure a unique application URL.
 
 ## The demo (script)
