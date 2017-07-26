@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+var jf = require('jsonfile');
+var service_creds = jf.readFileSync('/opt/conversation-service-bind/binding');
 
 const watson = require('watson-developer-cloud'); // watson sdk
 
@@ -20,8 +22,8 @@ const watson = require('watson-developer-cloud'); // watson sdk
 const conversation = watson.conversation({
   // If unspecified here, the CONVERSATION_USERNAME and CONVERSATION_PASSWORD env properties will be checked
   // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
-  // username: '<username>',
-  // password: '<password>',
+  username: service_creds.username,
+  password: service_creds.password,
   version_date: '2017-02-03',
   version: 'v1'
 });

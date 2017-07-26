@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
+var jf = require('jsonfile');
+var service_creds = jf.readFileSync('/opt/s2t-service-bind/binding');
 
 const watson = require('watson-developer-cloud');
 const vcapServices = require('vcap_services');
 
+
 const credentials = Object.assign({
-  username: process.env.SPEECH_TO_TEXT_USERNAME || '<username>',
-  password: process.env.SPEECH_TO_TEXT_PASSWORD || '<username>',
+  username: process.env.SPEECH_TO_TEXT_USERNAME || service_creds.username,
+  password: process.env.SPEECH_TO_TEXT_PASSWORD || service_creds.password,
   url: process.env.SPEECH_TO_TEXT_URL || 'https://stream.watsonplatform.net/speech-to-text/api',
   version: 'v1'
 }, vcapServices.getCredentials('speech_to_text'));
