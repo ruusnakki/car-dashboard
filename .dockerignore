@@ -1,0 +1,16 @@
+readme_images/
+test/
+training/
+dist/
+node_modules/
+.cfignore
+.env.example
+.eslintignore
+.gitignore
+*.sh
+*.md
+*.MD
+*.yml
+Dockerfile
+done
+started

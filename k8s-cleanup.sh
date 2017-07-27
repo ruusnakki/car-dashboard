@@ -1,0 +1,12 @@
+#!/bin/sh
+
+source k8s-setenv.sh
+
+# Delete the namespace
+#kubectl delete namespace $KUBE_NAMESPACE
+# Reset the namespace to `default` for all following kubectl commands
+#kubectl config set-context $(kubectl config current-context) --namespace=default
+
+# If not using namespace, delete objects individually
+kubectl delete deployment $APP_NAME
+kubectl delete service $APP_NAME

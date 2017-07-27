@@ -1,22 +1,6 @@
 #!/bin/sh
 
-APP_NAME=car-dashboard
-
-CLUSTER_NAME=$APP_NAME
-CLUSTER_LOCATION=syd01
-CLUSTER_WORKERS=2
-CLUSTER_MC_TYPE=u1c.2x4
-CLUSTER_HARDWARE=shared
-
-VLAN_PRIV=priv01
-VLAN_PUB=pub01
-
-#KUBE_NAMESPACE=$APP_NAME
-KUBE_NAMESPACE=default
-
-REGISTRY=registry.au-syd.bluemix.net
-REGISTRY_NAMESPACE=iwinoto_gmail_funfactory
-IMAGE_NAME=$APP_NAME
+source k8s-setenv.sh
 
 # create namespace
 #kubectl create namespace $KUBE_NAMESPACE
@@ -41,7 +25,7 @@ bx cs cluster-service-bind $CLUSTER_NAME $KUBE_NAMESPACE speech-to-text-service
 bx cs cluster-service-bind $CLUSTER_NAME $KUBE_NAMESPACE text-to-speech-service
 
 # Create the service
-kubectl create -f car-dashboard-k8s.yml
+kubectl create -f k8s-car-dashboard.yml
 
 # Echo description
 kubectl describe service car-dashboard
