@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: car-dashboard-ingress
+spec:
+  tls:
+  - hosts:
+    - std.ap-south.containers.mybluemix.net
+    secretName: std
+  rules:
+  - host: std.ap-south.containers.mybluemix.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: car-dashboard
+          servicePort: 3000

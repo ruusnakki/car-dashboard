@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: car-dashboard
 spec:
-  replicas: 1 # tells deployment to run 1 pod matching the template
+  replicas: 2 # tells deployment to run 2 pod matching the template
   template: # create pods using pod definition in this template
     metadata:
       labels:
@@ -55,8 +55,8 @@ metadata:
 spec:
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
-  # type: LoadBalancer
-  type: NodePort
+  type: LoadBalancer
+  #type: NodePort
   ports:
   - port: 3000 # Internal Port
   #  nodePort: 31513

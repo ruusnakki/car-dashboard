@@ -3,6 +3,7 @@
 source k8s-setenv.sh
 
 # create namespace
+# Issue #1: currently doesn't work because pulling images from private registry fails.
 #kubectl create namespace $KUBE_NAMESPACE
 # set the namespace for all following kubectl commands
 #kubectl config set-context $(kubectl config current-context) --namespace=$KUBE_NAMESPACE
@@ -29,4 +30,7 @@ kubectl create -f k8s-car-dashboard.yml
 
 # Echo description
 kubectl describe service car-dashboard
-bx cs workers car-dashboard
+bx cs workers $CLUSTER_NAME
+
+# Create Ingress
+kubectl apply -f k8s-car-dashboard-ingress.yml
