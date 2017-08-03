@@ -1,6 +1,10 @@
 #!/bin/bash
-
+DOCKER_VER=17.06.0
 # Install Docker
+wget --quiet --output-document=/tmp/docker/docker-$DOCKER_VER-ce.tgz https://download.docker.com/mac/static/stable/x86_64/docker-$DOCKER_VER-ce.tgz
+cd /tmp/docker/
+tar xzf docker-$DOCKER_VER-ce.tgz
+
 
 echo "Download Bluemix CLI"
 wget --quiet --output-document=/tmp/Bluemix_CLI_amd64.tar.gz  http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/latest/Bluemix_CLI_amd64.tar.gz
