@@ -9,7 +9,7 @@ source k8s-setenv.sh
 #bx sl vlan create --vlan-type private --datacenter $CLUSTER_LOCATION --size 8 --name $VLAN_PRIV
 #bx sl vlan create --vlan-type public --datacenter $CLUSTER_LOCATION --size 8 --name $VLAN_PUB
 
-f [ "$CLUSTER_TYPE" = "standard" ]; then
+if [ "$CLUSTER_TYPE" = "standard" ]; then
   # Create a standard cluster
   bx cs cluster-create \
     --name $CLUSTER_NAME \
