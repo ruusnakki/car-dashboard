@@ -6,7 +6,7 @@ CLUSTER_TYPE=free
 #CLUSTER_TYPE=standard
 #CLUSTER_NAME=$APP_NAME
 CLUSTER_NAME=free-cluster
-CLUSTER_LOCATION=syd01
+CLUSTER_LOCATION=mel01
 CLUSTER_WORKERS=2
 CLUSTER_MC_TYPE=u1c.2x4
 CLUSTER_HARDWARE=shared
@@ -21,6 +21,7 @@ REGISTRY=registry.au-syd.bluemix.net
 REGISTRY_NAMESPACE=iwinoto_gmail_funfactory
 IMAGE_NAME=$APP_NAME
 
+bx cs cluster-config $CLUSTER_NAME
 KUBECONFIG_DIR=~/.bluemix/plugins/container-service/clusters/$CLUSTER_NAME
 KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-$CLUSTER_LOCATION-$CLUSTER_NAME.yml
 if [ -f "$KUBECONFIG_FILE" ]; then
