@@ -8,12 +8,13 @@ env:
   global:
   - CF_APP=car-dashboard
   - CF_API=https://api.au-syd.bluemix.net
-  - CF_ORG=FunFactory
-  - CF_SPACE=CC-Activation-Telstra
+  - CF_ORG=iwinoto@au1.ibm.com
+  - CF_ACCOUNT=iwinoto@au1.ibm.com
+  - CF_SPACE=bluemix-demo
 
 before_install:
   - source install_bx.sh
-  - bx login -a "$CF_API" -u "$CF_USERNAME" -p "$CF_PASSWORD" -o "$CF_ORG" -s "$CF_SPACE" -c "$CF_ACCOUNT"
+  - bx login -a "$CF_API" -u "$CF_USERNAME" --apikey "$BMX_APIKEY" -o "$CF_ORG" -s "$CF_SPACE"
   - bx cr login
 
 install: true
