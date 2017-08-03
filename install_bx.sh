@@ -1,32 +1,6 @@
 #!/bin/bash
 
 # Install Docker
-echo "### Install Docker"
-# ref: https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker
-apt-get update
-apt-get install -y --no-install-recommends \
-    linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual \
-    curl \
-    apt-transport-https \
-    ca-certificates \
-    software-properties-common \
-    unzip
-
-curl -fsSL https://apt.dockerproject.org/gpg | apt-key add -
-
-add-apt-repository \
-       "deb https://apt.dockerproject.org/repo/ \
-       ubuntu-$(lsb_release -cs) \
-       main"
-
-apt-get update
-
-apt-get -y install docker-engine
-
-#add user ubuntu to docker group
-usermod -aG docker ubuntu
-
 
 echo "Download Bluemix CLI"
 wget --quiet --output-document=/tmp/Bluemix_CLI_amd64.tar.gz  http://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/latest/Bluemix_CLI_amd64.tar.gz
