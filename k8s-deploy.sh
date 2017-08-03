@@ -33,4 +33,4 @@ kubectl describe service car-dashboard
 bx cs workers $CLUSTER_NAME
 
 # Create Ingress
-kubectl apply -f k8s-car-dashboard-ingress.yml
+#kubectl apply -f k8s-car-dashboard-ingress.yml

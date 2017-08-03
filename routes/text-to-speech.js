@@ -15,14 +15,23 @@
  */
 
 var jf = require('jsonfile');
-var service_creds = jf.readFileSync('/opt/t2s-service-bind/binding');
+try{
+  // If a binding file exists then we are in Kubernetes and need to get the
+  // service credentials from the binding file
+  var service_creds = jf.readFileSync('/opt/t2s-service-bind/binding');
+  process.env['TEXT_TO_SPEECH_USERNAME'] = service_creds.username;
+  process.env['TEXT_TO_SPEECH_PASSWORD'] = service_creds.password;
+}catch(err){
+  // If there is no binding file, then we are not in Kubernetes
+  // Credentials should be set in environment variables externally or VCAP_SERVICES
+}
 
 const watson = require('watson-developer-cloud');
 const vcapServices = require('vcap_services');
 
 const credentials = Object.assign({
-  username: process.env.TEXT_TO_SPEECH_USERNAME || service_creds.username,
-  password: process.env.TEXT_TO_SPEECH_PASSWORD || service_creds.password,
+  username: process.env.TEXT_TO_SPEECH_USERNAME,
+  password: process.env.TEXT_TO_SPEECH_PASSWORD,
   url: process.env.TEXT_TO_SPEECH_URL || 'https://stream.watsonplatform.net/text-to-speech/api',
   version: 'v1'
 }, vcapServices.getCredentials('text_to_speech'));

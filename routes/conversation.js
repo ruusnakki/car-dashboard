@@ -13,8 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 var jf = require('jsonfile');
-var service_creds = jf.readFileSync('/opt/conversation-service-bind/binding');
+try{
+  // If a binding file exists then we are in Kubernetes and need to prime the
+  // credentials in environment variables
+  var service_creds = jf.readFileSync('/opt/conversation-service-bind/binding');
+  process.env.CONVERSATION_USERNAME = service_creds.username;
+  process.env.CONVERSATION_PASSWORD = service_creds.password;
+}catch(err){
+  // If there is no binding file, then we are not in Kubernetes
+  // Credentials should be set in environment variables externally or VCAP_SERVICES
+  console.log(err.message);
+}
 
 const watson = require('watson-developer-cloud'); // watson sdk
 
@@ -22,11 +33,18 @@ const watson = require('watson-developer-cloud'); // watson sdk
 const conversation = watson.conversation({
   // If unspecified here, the CONVERSATION_USERNAME and CONVERSATION_PASSWORD env properties will be checked
   // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
-  username: service_creds.username,
-  password: service_creds.password,
+  //username = <username>,
+  //password = <password>,
   version_date: '2017-02-03',
   version: 'v1'
 });
+
+try {
+  //VCAP_SERVICES is available - print bound services");
+  console.log('VCAP:\n %s', process.env.VCAP_SERVICES);
+}catch(err){
+  console.log(err.message);
+}
 
 /**
  * Updates the response text using the intent confidence
