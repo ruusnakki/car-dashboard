@@ -1,12 +1,4 @@
-#!/bin/sh
-
-source k8s-setenv.sh
-
-###################################
-# Was in install_bx.sh
-# bit for some reason it did not clone in Toolchain build stage!
-#
-
+#!/bin/bash
 DOCKER_VER=17.06.0
 # Install Docker
 # ref: https://docs.docker.com/engine/installation/linux/docker-ce/binaries/
@@ -41,17 +33,3 @@ if [ -n "$DEBUG" ]; then
   bx --version
   bx plugin list
 fi
-
-
-#
-###################################
-
-# create namespace
-# Issue #1: currently doesn't work because pulling images from private registry fails.
-#kubectl create namespace $KUBE_NAMESPACE
-# set the namespace for all following kubectl commands
-#kubectl config set-context $(kubectl config current-context) --namespace=$KUBE_NAMESPACE
-
-# Build Docker image to Bluemix container registry
-docker build -t $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1 .
-docker push $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1
