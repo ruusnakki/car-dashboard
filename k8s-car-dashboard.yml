@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: car-dashboard
-        image: registry.au-syd.bluemix.net/iwinoto_gmail_funfactory/car-dashboard:1
+        image: registry.au-syd.bluemix.net/iwinoto_ibm/car-dashboard:1
         imagePullPolicy: Always
         resources:
           requests:
@@ -56,30 +56,11 @@ spec:
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
   #type: LoadBalancer
-  #type: NodePort
+  type: NodePort
   ports:
   - port: 3000 # Internal Port
     protocol: TCP
-  #  nodePort: 31513
+    nodePort: 31513
   selector:
     app: car-dashboard
     tier: frontend
----
-# Ingress service
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: car-dashboard-ingress
-spec:
-  tls:
-  - hosts:
-    - std.ap-south.containers.mybluemix.net
-    secretName: std
-  rules:
-  - host: std.ap-south.containers.mybluemix.net
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: car-dashboard
-          servicePort: 3000

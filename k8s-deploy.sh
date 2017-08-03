@@ -6,12 +6,6 @@ echo -------
 echo bx target
 bx target
 echo -------
-echo bx login
-bx login -a "$CF_API" --apikey "$BMX_APIKEY" -o "$CF_ORG" -s "$CF_SPACE"
-echo -------
-echo bx target
-bx target
-echo -------
 echo KUBECONFIG=$KUBECONFIG
 
 echo Create services
