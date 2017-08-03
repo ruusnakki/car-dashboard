@@ -1,0 +1,97 @@
+Preparing to start the job...
+Cloning the 'CC-Activation-Telstra' branch from repo 'https://github.com/iwinoto/car-dashboard.git'
+Repository successfully cloned
+Target: https://api.au-syd.bluemix.net
+Download Bluemix CLI
+Install the Bluemix container-service plugin
+Looking up 'container-service' from repository 'Bluemix'...
+Attempting to download the binary file...
+21544937 bytes downloaded
+Installing binary...
+OK
+Plug-in 'container-service 0.1.292' was successfully installed into /home/pipeline/.bluemix/plugins/container-service. Use 'bx plugin show container-service' to show its details.
+Install the Bluemix container-registry plugin
+Looking up 'container-registry' from repository 'Bluemix'...
+Attempting to download the binary file...
+11941740 bytes downloaded
+Installing binary...
+OK
+Plug-in 'container-registry 0.1.171' was successfully installed into /home/pipeline/.bluemix/plugins/container-registry. Use 'bx plugin show container-registry' to show its details.
+Install kubectl
+API endpoint: https://api.au-syd.bluemix.net
+Authenticating...
+OK
+
+Targeted account IWAN WINOTO's Account (e974b33664989b2986be4a539e408760)
+
+Targeted org iwinoto@au1.ibm.com
+
+Targeted space bluemix-demo
+
+
+                   
+API endpoint:   https://api.au-syd.bluemix.net (API version: 2.75.0)   
+Region:         au-syd   
+User:           iwinoto@au1.ibm.com   
+Account:        IWAN WINOTO's Account (e974b33664989b2986be4a539e408760)   
+Org:            iwinoto@au1.ibm.com   
+Space:          bluemix-demo   
+Using default API endpoint: https://ap-south.containers.bluemix.net
+OK
+OK
+The configuration for free-cluster was downloaded successfully. Export environment variables to start using Kubernetes.
+
+export KUBECONFIG=/home/pipeline/.bluemix/plugins/container-service/clusters/free-cluster/kube-config-mel01-free-cluster.yml
+OK
+The configuration for free-cluster was downloaded successfully. Export environment variables to start using Kubernetes.
+
+export KUBECONFIG=/home/pipeline/.bluemix/plugins/container-service/clusters/free-cluster/kube-config-mel01-free-cluster.yml
+KUBECONFIG=/home/pipeline/.bluemix/plugins/container-service/clusters/free-cluster/kube-config-mel01-free-cluster.yml
+-------
+bx target
+
+                   
+API endpoint:   https://api.au-syd.bluemix.net (API version: 2.75.0)   
+Region:         au-syd   
+User:           iwinoto@au1.ibm.com   
+Account:        IWAN WINOTO's Account (e974b33664989b2986be4a539e408760)   
+Org:            iwinoto@au1.ibm.com   
+Space:          bluemix-demo   
+-------
+bx login
+API endpoint: https://api.au-syd.bluemix.net
+Authenticating...
+OK
+
+Targeted account IWAN WINOTO's Account (e974b33664989b2986be4a539e408760)
+
+Targeted org iwinoto@au1.ibm.com
+
+Targeted space bluemix-demo
+
+
+                   
+API endpoint:   https://api.au-syd.bluemix.net (API version: 2.75.0)   
+Region:         au-syd   
+User:           iwinoto@au1.ibm.com   
+Account:        IWAN WINOTO's Account (e974b33664989b2986be4a539e408760)   
+Org:            iwinoto@au1.ibm.com   
+Space:          bluemix-demo   
+-------
+bx target
+
+                   
+API endpoint:   https://api.au-syd.bluemix.net (API version: 2.75.0)   
+Region:         au-syd   
+User:           iwinoto@au1.ibm.com   
+Account:        IWAN WINOTO's Account (e974b33664989b2986be4a539e408760)   
+Org:            iwinoto@au1.ibm.com   
+Space:          bluemix-demo   
+-------
+KUBECONFIG=/home/pipeline/.bluemix/plugins/container-service/clusters/free-cluster/kube-config-mel01-free-cluster.yml
+Create services
+Invoking 'cf create-service conversation free my-conversation-service'...
+
+fork/exec /tmp/Bluemix_CLI/bin/cfcli/cf: permission denied
+
+Finished: FAILED
