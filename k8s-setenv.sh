@@ -16,14 +16,17 @@ VLAN_PUB=pub01
 
 #KUBE_NAMESPACE=$APP_NAME
 KUBE_NAMESPACE=default
+KUBECONFIG_DIR=~/.bluemix/plugins/container-service/clusters/$CLUSTER_NAME
+KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-$CLUSTER_LOCATION-$CLUSTER_NAME.yml
 
 REGISTRY=registry.au-syd.bluemix.net
 REGISTRY_NAMESPACE=iwinoto_gmail_funfactory
 IMAGE_NAME=$APP_NAME
 
+bx cr login
+bx cs init
 bx cs cluster-config $CLUSTER_NAME
-KUBECONFIG_DIR=~/.bluemix/plugins/container-service/clusters/$CLUSTER_NAME
-KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-$CLUSTER_LOCATION-$CLUSTER_NAME.yml
+
 if [ -f "$KUBECONFIG_FILE" ]; then
   export KUBECONFIG=$KUBECONFIG_FILE
 else
