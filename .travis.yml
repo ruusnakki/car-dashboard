@@ -16,7 +16,7 @@ env:
   - IMAGE_NAME=car-dashboard
 
 before_install:
-  - source install_bx.sh
+  - source install-bx.sh
   - bx login -a "$CF_API" -u "$CF_USERNAME" --apikey "$BMX_APIKEY" -o "$CF_ORG" -s "$CF_SPACE"
   - source k8s-setenv.sh
 
