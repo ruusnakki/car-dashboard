@@ -2,6 +2,8 @@
 
 APP_NAME=car-dashboard
 
+CLUSTER_TYPE=free
+#CLUSTER_TYPE=standard
 #CLUSTER_NAME=$APP_NAME
 CLUSTER_NAME=_STD
 CLUSTER_LOCATION=syd01
@@ -29,6 +31,8 @@ else
   KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-mel01-$CLUSTER_NAME.yml
   if [ -f "$KUBECONFIG_FILE" ]; then
     export KUBECONFIG=$KUBECONFIG_FILE
+  else
+    echo KUBECONFIG file is not found
   fi
 fi
 echo KUBECONFIG=$KUBECONFIG
