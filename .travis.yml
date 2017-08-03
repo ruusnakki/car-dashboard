@@ -1,27 +1,13 @@
 language: node_js
 dist: trusty
 sudo: required
-node_js: 6
-script:
-- npm run test
+services:
+  - docker
 
-cache:
-  directories:
-  - node_modules
-env:
-  global:
-  - CF_APP=car-dashboard
-  - CF_API=https://api.ng.bluemix.net
-  - CF_ORGANIZATION=WatsonPlatformServices
-  - CF_SPACE=demos
-before_deploy: npm install -g cf-blue-green
-deploy:
-  provider: script
-  script:
-  - cf-blue-green-travis
-  on:
-    branch: master
-    repo: watson-developer-cloud/car-dashboard
-  skip_cleanup: true
-notifications:
-  email: false
+script:
+  # Build Docker image to Bluemix container registry
+  - docker build -t $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1 .
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1
