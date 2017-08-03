@@ -1,6 +1,7 @@
 #!/bin/bash
 DOCKER_VER=17.06.0
 # Install Docker
+# ref: https://docs.docker.com/engine/installation/linux/docker-ce/binaries/
 wget --quiet --output-document=/tmp/docker/docker-$DOCKER_VER-ce.tgz https://download.docker.com/mac/static/stable/x86_64/docker-$DOCKER_VER-ce.tgz
 cd /tmp/docker/
 tar xzf docker-$DOCKER_VER-ce.tgz
