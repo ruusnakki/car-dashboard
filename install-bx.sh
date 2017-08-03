@@ -20,12 +20,15 @@ bx -v
 bx plugin list
 
 # Install Armada CS plugin
-echo "Install the Bluemix container-service plugin"
-bx plugin install container-service -r Bluemix -f
+#echo "Install the Bluemix container-service plugin"
+#bx plugin install container-service -r Bluemix -f
 
 # Install container registry plugin
-echo "Install the Bluemix container-registry plugin"
-bx plugin install container-registry -r Bluemix -f
+#echo "Install the Bluemix container-registry plugin"
+#bx plugin install container-registry -r Bluemix -f
+
+echo kubectl version
+kubectl version
 
 echo "Install kubectl"
 wget --quiet --output-document=/tmp/Bluemix_CLI/bin/kubectl  https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
