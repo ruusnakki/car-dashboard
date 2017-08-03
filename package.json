@@ -9,7 +9,6 @@
     "lint": "eslint .",
     "autofix": "eslint --fix .",
     "codecov": "npm run test && (codecov || true)",
-    "postinstall": "npm run build",
     "build": "gulp build-html",
     "watch": "gulp server:watch"
   },
