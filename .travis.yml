@@ -25,9 +25,7 @@ install: true
 script:
   # Build Docker image to Bluemix container registry
   - docker build -t $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1 .
-
-after_success:
   - docker push $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1
 
-deploy:
+after_success:
   - source k8s-deploy.sh
