@@ -12,14 +12,15 @@ echo -------
 echo bx target
 bx target
 echo -------
+echo KUBECONFIG=$KUBECONFIG
 
 echo Create services
 # conversation
-cf create-service conversation free my-conversation-service
+bx cf create-service conversation free my-conversation-service
 # speech-to-text
-cf create-service speech_to_text standard speech-to-text-service
+bx cf create-service speech_to_text standard speech-to-text-service
 # text-to-speech
-cf create-service text_to_speech standard text-to-speech-service
+bx cf create-service text_to_speech standard text-to-speech-service
 
 echo Bind services to the cluster
 bx cs cluster-service-bind $CLUSTER_NAME $KUBE_NAMESPACE my-conversation-service
