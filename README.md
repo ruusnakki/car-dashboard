@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/iwinoto/car-dashboard.svg?branch=master)](https://travis-ci.org/iwinoto/car-dashboard)
+
 # Conversation Car Dashboard Demo Application
 [![Build Status](https://travis-ci.org/watson-developer-cloud/car-dashboard.svg?branch=master)](http://travis-ci.org/watson-developer-cloud/car-dashboard)
 [![codecov.io](https://codecov.io/github/watson-developer-cloud/conversation-simple/coverage.svg?branch=master)](https://codecov.io/github/watson-developer-cloud/car-dashboard?branch=master)
