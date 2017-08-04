@@ -20,7 +20,7 @@ KUBECONFIG_DIR=~/.bluemix/plugins/container-service/clusters/$CLUSTER_NAME
 KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-$CLUSTER_LOCATION-$CLUSTER_NAME.yml
 
 REGISTRY=registry.au-syd.bluemix.net
-REGISTRY_NAMESPACE=iwinoto_gmail_funfactory
+REGISTRY_NAMESPACE=iwinoto_ibm
 IMAGE_NAME=$APP_NAME
 
 bx cr login

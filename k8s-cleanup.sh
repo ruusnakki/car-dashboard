@@ -14,3 +14,6 @@ kubectl delete service $APP_NAME
 bx cs cluster-service-unbind $CLUSTER_NAME $KUBE_NAMESPACE my-conversation-service
 bx cs cluster-service-unbind $CLUSTER_NAME $KUBE_NAMESPACE speech-to-text-service
 bx cs cluster-service-unbind $CLUSTER_NAME $KUBE_NAMESPACE text-to-speech-service
+kubectl delete secret binding-my-conversation-service
+kubectl delete secret binding-speech-to-text-service
+kubectl delete secret binding-text-to-speech-service
