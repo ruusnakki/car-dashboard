@@ -2,11 +2,13 @@
 
 APP_NAME=car-dashboard
 
-CLUSTER_TYPE=free
-#CLUSTER_TYPE=standard
-#CLUSTER_NAME=$APP_NAME
-CLUSTER_NAME=free-cluster
-CLUSTER_LOCATION=mel01
+#CLUSTER_TYPE=free
+CLUSTER_TYPE=standard
+CLUSTER_NAME=$APP_NAME
+#CLUSTER_NAME=free-cluster
+CLUSTER_NAME=_STD
+#CLUSTER_LOCATION=mel01
+CLUSTER_LOCATION=syd01
 CLUSTER_WORKERS=2
 CLUSTER_MC_TYPE=u1c.2x4
 CLUSTER_HARDWARE=shared
@@ -20,7 +22,9 @@ KUBECONFIG_DIR=~/.bluemix/plugins/container-service/clusters/$CLUSTER_NAME
 KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-$CLUSTER_LOCATION-$CLUSTER_NAME.yml
 
 REGISTRY=registry.au-syd.bluemix.net
-REGISTRY_NAMESPACE=iwinoto_ibm
+if [[ -z "$REGISTRY_NAMESPACE" ]]; then
+  REGISTRY_NAMESPACE=iwinoto_ibm
+fi
 IMAGE_NAME=$APP_NAME
 
 bx cr login
@@ -39,4 +43,8 @@ else
     echo KUBECONFIG file is not found
   fi
 fi
+
 echo KUBECONFIG=$KUBECONFIG
+echo REGISTRY=$REGISTRY
+echo REGISTRY_NAMESPACE=$REGISTRY_NAMESPACE
+echo image tag=$TAG

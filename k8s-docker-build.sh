@@ -9,5 +9,5 @@ source k8s-setenv.sh
 #kubectl config set-context $(kubectl config current-context) --namespace=$KUBE_NAMESPACE
 
 # Build Docker image to Bluemix container registry
-docker build -t $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1 .
-docker push $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:1
+docker build -t $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:$TAG .
+docker push $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:$TAG
