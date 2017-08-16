@@ -9,12 +9,12 @@ spec:
   template: # create pods using pod definition in this template
     metadata:
       labels:
-        app: car-dashboard
+        app: $APP_NAME
         tier: frontend
     spec:
       containers:
-      - name: car-dashboard
-        image: registry.au-syd.bluemix.net/$REGISTRY_NAMESPACE/car-dashboard:$TAG
+      - name: $IMAGE_NAME
+        image: $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:$TAG
         imagePullPolicy: Always
         resources:
           requests:

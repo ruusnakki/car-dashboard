@@ -22,8 +22,13 @@ bx cs cluster-service-bind $CLUSTER_NAME $KUBE_NAMESPACE speech-to-text-service
 bx cs cluster-service-bind $CLUSTER_NAME $KUBE_NAMESPACE text-to-speech-service
 
 echo Deploy the service to kubernetes
-echo replace image namespace and tag from environment variables
-sed s/\$TAG/$TAG/ k8s-car-dashboard.yml | sed s/\$REGISTRY_NAMESPACE/$REGISTRY_NAMESPACE/ | kubectl replace -f -
+echo substitute deployment values from environment variables
+sed s/\$TAG/$TAG/g k8s-car-dashboard.yml | \
+sed s/\$REGISTRY_NAMESPACE/$REGISTRY_NAMESPACE/g | \
+sed s/\$REGISTRY/$REGISTRY/g | \
+sed s/\$IMAGE_NAME/$IMAGE_NAME/g | \
+sed s/\$APP_NAME/$APP_NAME/g | \
+kubectl replace -f -
 
 # Echo description
 kubectl describe service car-dashboard

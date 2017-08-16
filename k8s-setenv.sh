@@ -4,10 +4,7 @@ APP_NAME=car-dashboard
 
 #CLUSTER_TYPE=free
 CLUSTER_TYPE=standard
-CLUSTER_NAME=$APP_NAME
-#CLUSTER_NAME=free-cluster
 CLUSTER_NAME=_STD
-#CLUSTER_LOCATION=mel01
 CLUSTER_LOCATION=syd01
 CLUSTER_WORKERS=2
 CLUSTER_MC_TYPE=u1c.2x4
@@ -21,11 +18,10 @@ KUBE_NAMESPACE=default
 KUBECONFIG_DIR=~/.bluemix/plugins/container-service/clusters/$CLUSTER_NAME
 KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-$CLUSTER_LOCATION-$CLUSTER_NAME.yml
 
-REGISTRY=registry.au-syd.bluemix.net
-if [[ -z "$REGISTRY_NAMESPACE" ]]; then
-  REGISTRY_NAMESPACE=iwinoto_ibm
-fi
 IMAGE_NAME=$APP_NAME
+# Default image registry
+DEF_REGISTRY=registry.au-syd.bluemix.net
+DEF_REGISTRY_NAMESPACE=iwinoto_gmail_funfactory
 
 bx cr login
 bx cs init
@@ -44,7 +40,27 @@ else
   fi
 fi
 
+if [ -z "$REGISTRY" ]; then
+  # Image registry not set. Use the default
+  REGISTRY="$DEF_REGISTRY"
+fi
+
+if [ -z "$REGISTRY_NAMESPACE" ]; then
+  # Image registry namespace not set. Use the default
+  REGISTRY_NAMESPACE=$DEF_REGISTRY_NAMESPACE
+fi
+
+if [ -z "$IMAGE_TAG" ]; then
+  # IMAGE_TAG not set so get from git
+  # git rev-parse --short HEAD
+  # git describe --tags --exact-match
+  # Get tag or commit from git
+  TAG="$(git rev-parse --short HEAD)"
+else
+  TAG=$IMAGE_TAG
+fi
+
 echo KUBECONFIG=$KUBECONFIG
 echo REGISTRY=$REGISTRY
 echo REGISTRY_NAMESPACE=$REGISTRY_NAMESPACE
-echo image tag=$TAG
+echo Image tag=$TAG
