@@ -1,6 +1,8 @@
-# FROM node:6.9.2
-# Much more reasonable in size (100MB instead of 700MB)
-FROM node:6.10.3-alpine
+FROM node:6.9.2
+# Much more reasonable in size (100MB instead of 700MB) but w/o apt other tools
+# FROM node:6.10.3-alpine
+# Using IBM container registry ibmnode
+#FROM registry.au-syd.bluemix.net/ibmnode:latest
 
 # Create app directory
 RUN mkdir -p /usr/src/app

@@ -8,6 +8,7 @@ source k8s-setenv.sh
 # set the namespace for all following kubectl commands
 #kubectl config set-context $(kubectl config current-context) --namespace=$KUBE_NAMESPACE
 
-# Build Docker image to Bluemix container registry
+echo Build Docker image to local docker with namespace = $REGISTRY_NAMESPACE
 docker build -t $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:$TAG .
+echo Push to Bluemix Container Registry
 docker push $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:$TAG

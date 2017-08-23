@@ -14,7 +14,7 @@ VLAN_PRIV=priv01
 VLAN_PUB=pub01
 
 #KUBE_NAMESPACE=$APP_NAME
-KUBE_NAMESPACE=default
+DEF_KUBE_NAMESPACE=default
 KUBECONFIG_DIR=~/.bluemix/plugins/container-service/clusters/$CLUSTER_NAME
 KUBECONFIG_FILE=$KUBECONFIG_DIR/kube-config-$CLUSTER_LOCATION-$CLUSTER_NAME.yml
 
@@ -40,6 +40,11 @@ else
   fi
 fi
 
+if [ -z "$KUBE_NAMESPACE" ]; then
+  # kubernetes namespace not set. Use the default
+  KUBE_NAMESPACE="$DEF_KUBE_NAMESPACE"
+fi
+
 if [ -z "$REGISTRY" ]; then
   # Image registry not set. Use the default
   REGISTRY="$DEF_REGISTRY"
@@ -60,6 +65,7 @@ else
   TAG=$IMAGE_TAG
 fi
 
+echo KUBE_NAMESPACE=$KUBE_NAMESPACE
 echo KUBECONFIG=$KUBECONFIG
 echo REGISTRY=$REGISTRY
 echo REGISTRY_NAMESPACE=$REGISTRY_NAMESPACE

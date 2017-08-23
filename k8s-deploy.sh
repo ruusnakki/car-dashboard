@@ -28,10 +28,10 @@ sed s/\$REGISTRY_NAMESPACE/$REGISTRY_NAMESPACE/g | \
 sed s/\$REGISTRY/$REGISTRY/g | \
 sed s/\$IMAGE_NAME/$IMAGE_NAME/g | \
 sed s/\$APP_NAME/$APP_NAME/g | \
-kubectl replace -f -
+kubectl --namespace $KUBE_NAMESPACE create -f -
 
 # Echo description
-kubectl describe service car-dashboard
+kubectl --namespace $KUBE_NAMESPACE describe service car-dashboard
 bx cs workers $CLUSTER_NAME
 
 # Create Ingress

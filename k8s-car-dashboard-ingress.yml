@@ -2,6 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: car-dashboard-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
   - hosts:
@@ -11,7 +13,7 @@ spec:
   - host: std.ap-south.containers.mybluemix.net
     http:
       paths:
-      - path: /
+      - path: /car-dashboard
         backend:
           serviceName: car-dashboard
           servicePort: 3000

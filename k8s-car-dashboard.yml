@@ -12,6 +12,8 @@ spec:
         app: $APP_NAME
         tier: frontend
     spec:
+      imagePullSecrets:
+      - name: registry-ng-funfactory
       containers:
       - name: $IMAGE_NAME
         image: $REGISTRY/$REGISTRY_NAMESPACE/$IMAGE_NAME:$TAG
