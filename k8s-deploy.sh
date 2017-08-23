@@ -31,7 +31,7 @@ sed s/\$APP_NAME/$APP_NAME/g | \
 kubectl --namespace $KUBE_NAMESPACE create -f -
 
 # Echo description
-kubectl --namespace $KUBE_NAMESPACE describe service car-dashboard
+kubectl --namespace $KUBE_NAMESPACE describe deployment car-dashboard
 bx cs workers $CLUSTER_NAME
 
 # Create Ingress
