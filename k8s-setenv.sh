@@ -23,7 +23,7 @@ IMAGE_NAME=$APP_NAME
 DEF_REGISTRY=registry.au-syd.bluemix.net
 DEF_REGISTRY_NAMESPACE=iwinoto_gmail_funfactory
 
-bx cr login
+#bx cr login
 bx cs init
 bx cs cluster-config $CLUSTER_NAME
 

@@ -24,7 +24,7 @@ spec:
             memory: 100Mi
         env:
           - name: WORKSPACE_ID
-            value: 090cdda0-b448-4866-a853-bed0223ff77c
+            value: 4fe85612-4ed3-41e9-a898-8103943449dd
         volumeMounts:
           - mountPath: /opt/conversation-service-bind # Mount the "service-bind-volume" volume into the pod.
             name: conversation-service-bind-volume
