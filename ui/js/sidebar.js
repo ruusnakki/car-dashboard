@@ -34,8 +34,7 @@ var Sidebar = (function() {
     'What’s my ETA?',
     'Show me what’s nearby',
     'Find a gas station',
-    'Turn my radio up',
-    'Turn the fan on'
+    'Turn my radio up'
   ];
 
 
