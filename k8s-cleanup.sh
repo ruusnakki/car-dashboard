@@ -4,6 +4,7 @@ source k8s-setenv.sh
 
 # Delete the namespace
 kubectl delete namespace $KUBE_NAMESPACE
+kubectl config set-context $(kubectl config current-context) --namespace=default
 
 # If not using namespace, delete objects individually
 #kubectl --namespace $KUBE_NAMESPACE delete ingress $APP_NAME-ingress
