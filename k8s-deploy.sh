@@ -8,8 +8,7 @@ bx target
 echo -------
 echo KUBECONFIG=$KUBECONFIG
 
-#deployed=`kubectl --namespace $KUBE_NAMESPACE get deployments -o json | jq ".items[].metadata | select(.name==\"$APP_NAME\")"`
-deployed=`kubectl --namespace $KUBE_NAMESPACE get deployments -o jsonpath="{$.items[?(@.metadata.name==\"$APP_NAME\")]}"`
+deployed=`kubectl --namespace $KUBE_NAMESPACE get deployments -o jsonpath="{$.items[?(@.metadata.name==\"$APP_NAME\")].metadata.name}"`
 echo deployed=$deployed
 
 if [ -z "$deployed" ]; then
