@@ -6,7 +6,7 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: std.ap-south.containers.mybluemix.net
+  - host: car-dashboard.std.ap-south.containers.mybluemix.net
     http:
       paths:
       - path: /

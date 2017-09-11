@@ -29,11 +29,12 @@ if [ -z "$deployed" ]; then
 
   echo Deploy the service to kubernetes
   echo substitute deployment values from environment variables
-  sed s/\$TAG/$TAG/g k8s-car-dashboard.yml | \
-  sed s/\$REGISTRY_NAMESPACE/$REGISTRY_NAMESPACE/g | \
-  sed s/\$REGISTRY/$REGISTRY/g | \
-  sed s/\$IMAGE_NAME/$IMAGE_NAME/g | \
-  sed s/\$APP_NAME/$APP_NAME/g | \
+  sed -e s/\$TAG/$TAG/g \
+  -e s/\$REGISTRY_NAMESPACE/$REGISTRY_NAMESPACE/g \
+  -e s/\$REGISTRY/$REGISTRY/g \
+  -e s/\$IMAGE_NAME/$IMAGE_NAME/g \
+  -e s/\$APP_NAME/$APP_NAME/g \
+  k8s-car-dashboard.yml | \
   kubectl --namespace $KUBE_NAMESPACE create -f -
 
   # Create Ingress
