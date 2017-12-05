@@ -5,3 +5,5 @@ node_modules/
 .idea/
 coverage
 npm-debug.log
+.git/
+vcap-local.js
