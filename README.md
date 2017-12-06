@@ -42,11 +42,11 @@ understands that in both cases your intent is the same and responds accordingly.
     ![](readme_images/services.PNG)
 
 ## Deploy the App
-1 Click this button to Deploy to Bluemix.
+1 Click this button to Deploy to IBM Cloud Cloud Foundry.
 
  [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/car-dashboard)
 
-2 Log in with an existing Bluemix account or sign up.
+2 Log in with an existing IBM Cloud account or sign up.
 
 3 Name your app and select your REGION, ORGANIZATION, and SPACE. Then select DEPLOY
  ![](readme_images/deploy.PNG)
@@ -203,6 +203,10 @@ For more information on workspaces, see the full  [Conversation service  documen
 ![](readme_images/env.PNG)
 
 5 Restart your application.
+
+# Deploy to Kubernetes in IBM Cloud Private (ICP) v2.1
+This application can be deployed as a Hybrid Cloud application where the application code will execute in IBM Cloud Private in your infrastructure and connect to the IBM Watson cognitive services on IBM Cloud Public.
+
 
 
 # Troubleshooting in Bluemix
