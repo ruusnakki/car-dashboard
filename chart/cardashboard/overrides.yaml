@@ -6,17 +6,17 @@ image:
   repository: default/cardashboard
 hpa:
   enabled: false
-cloud-services:
+cloud_services:
   conversation:
     url: "https://gateway.watsonplatform.net/conversation/api"
     username: "de472385-1359-4401-b6bc-61a2a7a16bec"
     password: "dhB4vT3JuyDp"
     workspace: 4fe85612-4ed3-41e9-a898-8103943449dd
-  speech-to-text:
+  speech_to_text:
     url: "https://stream.watsonplatform.net/speech-to-text/api"
     username: "0cd2bba7-ff2b-4849-8bb1-b27c155dcc26"
     password: "tMgEZ8fyrYtD"
-  text-to-speech:
+  text_to_speech:
     url: "https://stream.watsonplatform.net/text-to-speech/api"
     username: "14064359-5a18-4370-a50f-627654cd5aa3"
     password: "HfRUzWMjDeDL"

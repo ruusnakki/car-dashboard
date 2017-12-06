@@ -38,7 +38,7 @@ spec:
             value : "{{ .Values.service.servicePort }}"
         env:
           - name: WORKSPACE_ID
-            value: "{{ .Values.cloud-services.conversation.workspace }}"
+            value: "{{ .Values.cloud_services.conversation.workspace }}"
         volumeMounts:
           - mountPath: /opt/conversation-service-bind # Mount the "service-bind-volume" volume into the pod.
             name: conversation-service-bind-volume

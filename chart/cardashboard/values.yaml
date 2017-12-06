@@ -26,17 +26,17 @@ hpa:
       targetAverageUtilization: 70
     memory:
       targetAverageUtilization: 70
-cloud-services:
+cloud_services:
   conversation:
     url: <Conversation service URL>
     username: <Conversation username>
     password: <Conversation password>
     workspace: <Conversation domain workspace>
-  speech-to-text:
+  speech_to_text:
     url: <Speech-to-text service URL>
     username: <Speech-to-text username>
     password: <Speech-to-text password>
-  text-to-speech:
+  text_to_speech:
     url: <Text-to-speech service URL>
     username: <Text-to-speech username>
     password: <Text-to-speech password>
