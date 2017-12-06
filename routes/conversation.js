@@ -18,11 +18,10 @@ var jf = require('jsonfile');
 try{
   // If a binding file exists then we are in Kubernetes and need to prime the
   // credentials in environment variables
-//  var service_creds = jf.readFileSync('/opt/conversation-service-bind/binding');
-  var service_creds = jf.readFileSync('/opt/conversation-service-bind');
+  var service_creds = jf.readFileSync('/opt/conversation-service-bind/binding');
   process.env.CONVERSATION_USERNAME = service_creds.username;
   process.env.CONVERSATION_PASSWORD = service_creds.password;
-  console.log("INFO", "Converstation username = " + service_creds.username);
+  console.log('INFO', 'Converstation username = ' + service_creds.username);
 }catch(err){
   // If there is no binding file, then we are not in Kubernetes
   // Credentials should be set in environment variables externally or VCAP_SERVICES
