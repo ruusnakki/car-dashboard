@@ -3,6 +3,6 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: cardashboard
+  repository: default/cardashboard
 hpa:
-  enabled: true
+  enabled: false
