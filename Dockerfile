@@ -20,5 +20,5 @@ RUN npm run build
 #ENV WORKSPACE_ID <workspace ID>
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
-#CMD [ "ls", "/opt/conversation-service-bind/"]
+#CMD [ "npm", "start" ]
+CMD [ "ls", "/opt/conversation-service-bind/"]

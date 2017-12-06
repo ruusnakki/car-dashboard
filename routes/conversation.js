@@ -15,6 +15,20 @@
  */
 
 var jf = require('jsonfile');
+
+/* DEBUG
+  List files in the service binding directory
+*/
+var fs = require('fs');
+fs.readdir('/opt/conversation-service-bind', function(err, items) {
+  console.log(items);
+
+  for (var i=0; i<items.length; i++) {
+    console.log(items[i]);
+  }
+});
+/* END DEBUG */
+
 try{
   // If a binding file exists then we are in Kubernetes and need to prime the
   // credentials in environment variables
