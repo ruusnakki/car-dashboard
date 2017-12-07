@@ -207,6 +207,18 @@ For more information on workspaces, see the full  [Conversation service  documen
 # Deploy to Kubernetes in IBM Cloud Private (ICP) v2.1
 This application can be deployed as a Hybrid Cloud application where the application code will execute in IBM Cloud Private in your infrastructure and connect to the IBM Watson cognitive services on IBM Cloud Public.
 
+1. Get / create the required Watson Services
+  1. Watson conversation
+  2. Watson Speech to text
+  3. Watson Text to Speech
+2. Create service credentials
+3. Store service names and credential names
+4. Configure Watson conversation
+  1. Open Watson Conversation dashboard
+  2. Create new workspace
+  3. Load workspace from ./training files
+  4. Get workspace ID and store in `chart/overrides.yaml`
+
 
 
 # Troubleshooting in Bluemix
