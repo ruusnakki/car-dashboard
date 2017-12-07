@@ -29,7 +29,7 @@ var Sidebar = (function() {
 
   var suggestions = [
     //uncomment the line below to show pipeline changes.
-    'Find a resraurant nearby',
+    'Find a restaurant nearby',
     'Turn on the headlights',
     'Shut off my lights',
     'Play some music',
