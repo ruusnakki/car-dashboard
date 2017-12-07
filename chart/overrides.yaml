@@ -8,15 +8,21 @@ hpa:
   enabled: false
 cloud_services:
   conversation:
-    url: "https://gateway.watsonplatform.net/conversation/api"
-    username: "de472385-1359-4401-b6bc-61a2a7a16bec"
-    password: "dhB4vT3JuyDp"
-    workspace: 4fe85612-4ed3-41e9-a898-8103943449dd
+    credentials: '{
+      "url": "https://gateway.watsonplatform.net/conversation/api",
+      "username": "de472385-1359-4401-b6bc-61a2a7a16bec",
+      "password": "dhB4vT3JuyDp"
+    }'
+    workspace: 090cdda0-b448-4866-a853-bed0223ff77c
   speech_to_text:
-    url: "https://stream.watsonplatform.net/speech-to-text/api"
-    username: "0cd2bba7-ff2b-4849-8bb1-b27c155dcc26"
-    password: "tMgEZ8fyrYtD"
+    credentials: '{
+      "url": "https://stream.watsonplatform.net/speech-to-text/api",
+      "username": "0cd2bba7-ff2b-4849-8bb1-b27c155dcc26",
+      "password": "tMgEZ8fyrYtD"
+    }'
   text_to_speech:
-    url: "https://stream.watsonplatform.net/text-to-speech/api"
-    username: "14064359-5a18-4370-a50f-627654cd5aa3"
-    password: "HfRUzWMjDeDL"
+    credentials: '{
+      "url": "https://stream.watsonplatform.net/text-to-speech/api",
+      "username": "14064359-5a18-4370-a50f-627654cd5aa3",
+      "password": "HfRUzWMjDeDL"
+    }'
