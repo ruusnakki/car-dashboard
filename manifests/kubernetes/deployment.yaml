@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: "cardashboard"
-        image: "default/cardashboard:{{ .Values.image.tag }}"
+        image: "icpcluster.icp:8500/default/cardashboard:{{ .Values.image.tag }}"
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
