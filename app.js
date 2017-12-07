@@ -20,6 +20,9 @@ const app = express();
 // Bootstrap application settings
 require('./config/express')(app);
 
+// Health monitor
+require('./routes/health')(app);
+
 // Configure the Watson services
 /*
 require('./routes/conversation')(app);

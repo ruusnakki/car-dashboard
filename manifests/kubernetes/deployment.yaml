@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "cardashboard-deployment"
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: "cardashboard-selector"
+    spec:
+      containers:
+      - name: "cardashboard"
+        image: "default/cardashboard:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 1
+          periodSeconds: 60
+        env:
+          - name: PORT
+            value : "3000"
+        env:
+          - name: WORKSPACE_ID
+            value: "{{ .Values.cloud_services.conversation.workspace }}"
+        volumeMounts:
+          - mountPath: /opt/conversation-service-bind # Mount the "service-bind-volume" volume into the pod.
+            name: conversation-service-bind-volume
+          - mountPath: /opt/s2t-service-bind # Mount the "service-bind-volume" volume into the pod.
+            name: s2t-service-bind-volume
+          - mountPath: /opt/t2s-service-bind # Mount the "service-bind-volume" volume into the pod.
+            name: t2s-service-bind-volume
+      volumes:
+        - name: conversation-service-bind-volume
+          secret:
+            defaultMode: 420
+            secretName: binding-my-conversation-service
+        - name: s2t-service-bind-volume
+          secret:
+            defaultMode: 420
+            secretName: binding-speech-to-text-service
+        - name: t2s-service-bind-volume
+          secret:
+            defaultMode: 420
+            secretName: binding-text-to-speech-service
