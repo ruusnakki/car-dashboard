@@ -28,15 +28,9 @@ hpa:
       targetAverageUtilization: 70
 cloud_services:
   conversation:
-    url: <Conversation service URL>
-    username: <Conversation username>
-    password: <Conversation password>
-    workspace: <Conversation domain workspace>
+    credentials: '<credentials json>'
+    workspace: '<Conversation workspace ID>'
   speech_to_text:
-    url: <Speech-to-text service URL>
-    username: <Speech-to-text username>
-    password: <Speech-to-text password>
+    credentials: '<credentials json>'
   text_to_speech:
-    url: <Text-to-speech service URL>
-    username: <Text-to-speech username>
-    password: <Text-to-speech password>
+    credentials: '<credentials json>'
