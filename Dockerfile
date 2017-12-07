@@ -21,4 +21,3 @@ RUN npm run build
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
-#CMD [ "/bin/bash", "-c", "i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done"]
