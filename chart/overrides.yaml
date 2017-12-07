@@ -3,7 +3,7 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: icpcluster.icp:8500/default/cardashboard
+  repository: icpcluster.icp:8500/iwinoto/cardashboard
 hpa:
   enabled: false
 cloud_services:
