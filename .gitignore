@@ -1,4 +1,5 @@
 node_modules/
+chart/overrides.yaml
 dist/
 temp/
 .idea/
