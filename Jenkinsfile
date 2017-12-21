@@ -4,6 +4,6 @@
 microserviceBuilderPipeline {
   image = 'cardashboard'
   chartFolder = 'chart/cardashboard'
-  deployBranch = 'master'
-  namespace = 'iwinoto'
+  deployBranch = 'msb-test'
+  namespace = 'default'
 }
