@@ -8,9 +8,21 @@ hpa:
   enabled: false
 cloud_services:
   conversation:
-    credentials: <Conversation service instance credentials JSON>
-    workspace: <Conversation Workspace ID>
+    credentials: '{
+  "url": "https://gateway-fra.watsonplatform.net/conversation/api",
+  "username": "8bcdd351-2bdc-4321-80de-2657952380f5",
+  "password": "5tR3ZqktSsBu"
+}'
+    workspace: "8e6b287a-e20b-46db-8961-efdb3b63bef5"
   speech_to_text:
-    credentials: <Speech-to-Text service instance credentials JSON>
+    credentials: '{
+  "url": "https://stream-fra.watsonplatform.net/speech-to-text/api",
+  "username": "155667d1-f61e-4831-a82a-bb78b99b5bd1",
+  "password": "51DDQvvdlBe2"
+}'
   text_to_speech:
-    credentials: <Text-to-Speech service instance credentials JSON>
+    credentials: '{
+  "url": "https://stream-fra.watsonplatform.net/text-to-speech/api",
+  "username": "d787c186-c9c6-4d0a-bd4e-e985acbbed1a",
+  "password": "lmklWobNwlfH"
+}'
